@@ -1032,7 +1032,6 @@ class StackViewport extends Viewport {
       position: [0, 0, 0],
       parallelScale,
       scale: viewport.scale,
-      aspectRatio: viewport.aspectRatio || [1, 1],
       viewPlaneNormal: [
         viewPlaneNormal[0],
         viewPlaneNormal[1],
@@ -1111,10 +1110,6 @@ class StackViewport extends Viewport {
 
     if (flipHorizontal !== undefined || flipVertical !== undefined) {
       this.setFlipCPU({ flipHorizontal, flipVertical });
-    }
-
-    if (aspectRatio) {
-      viewport.aspectRatio = aspectRatio;
     }
 
     // re-calculate the transforms
